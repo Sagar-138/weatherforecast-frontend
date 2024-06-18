@@ -1,0 +1,54 @@
+.weather-forecast {
+    background-color: #fdfdfd;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    font-family: Arial, sans-serif;
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .weather-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .weather-list-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  .weather-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .weather-date, .weather-temp-range, .weather-conditions {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .weather-conditions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .weather-summary img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  
+  .weather-details {
+    padding: 10px 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
+  }
+  

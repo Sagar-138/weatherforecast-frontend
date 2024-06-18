@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import CurrentWeather from '../weatherfiles/CurrentWeather';
 import HourlyWeather from '../weatherfiles/HourlyWeather';
+import Forecast from '../weatherfiles/Forecast';
 
 const Headertwo = ({ weatherData }) => {
   const [activeTab, setActiveTab] = useState('today');
@@ -13,7 +14,7 @@ const Headertwo = ({ weatherData }) => {
       case 'hourly':
         return <HourlyWeather data={weatherData} />;
       case 'fifteenDays':
-        return <p>Tab content for 15 Days</p>;
+        return <Forecast data={weatherData}/>;
       case 'alerts':
         return <p>Tab content for Alerts</p>;
       default:
