@@ -1,22 +1,29 @@
-// import logo from './logo.svg';
-import './App.css';
-// import Header from './components/header/header';
-// import Headertwo from './components/header/headertwo';
-// import Footer from './components/footer/footer';
-// import FAQ from './components/pages/fifteendaystemp';
-import HomePage from './components/pages/home';
-
+import React, { useState } from 'react';
+import axios from 'axios';
+import Header from './components/header/header';
+import Headertwo from './components/header/headertwo';
+// import CurrentWeather from './components/weatherfiles/CurrentWeather';
 
 function App() {
+  const [weatherData, setWeatherData] = useState(null);
+
+  const handleSearch = async (city) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/weather/city/${city}`);
+      setWeatherData(response.data);
+      console.log(response);
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    }
+  };
+
   return (
     <div className="App">
-      {/* <Header/> */}
-      {/* <Headertwo/> */}
-      <HomePage/>
-      {/* <FAQ/> */}
-      {/* <Footer/> */}
+      <Header handleSearch={handleSearch} />
+      <Headertwo weatherData={weatherData} />
     </div>
   );
 }
+
 
 export default App;

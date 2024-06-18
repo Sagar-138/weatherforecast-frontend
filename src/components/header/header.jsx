@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../styles/header.css";
 
-function Header() {
+function Header({ handleSearch }) {
+  const [city, setCity] = useState('');
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    handleSearch(city);
+  };
+
   return (
     <div className="custom-navbar">
       <a href="#" className="brand">Weather</a>
@@ -17,8 +24,14 @@ function Header() {
           </div>
         </li>
       </ul>
-      <form className="search-form">
-        <input type="search" placeholder="Search City" aria-label="Search" />
+      <form className="search-form" onSubmit={onSubmit}>
+        <input
+          type="search"
+          placeholder="Search City"
+          aria-label="Search"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+        />
         <button type="submit">Search</button>
       </form>
     </div>

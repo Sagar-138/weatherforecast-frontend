@@ -1,29 +1,53 @@
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import CurrentWeather from '../weatherfiles/CurrentWeather';
+import HourlyWeather from '../weatherfiles/HourlyWeather';
 
-const Headertwo=()=> {
+const Headertwo = ({ weatherData }) => {
+  const [activeTab, setActiveTab] = useState('today');
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'today':
+        return <CurrentWeather data={weatherData} />;
+      case 'hourly':
+        return <HourlyWeather data={weatherData} />;
+      case 'fifteenDays':
+        return <p>Tab content for 15 Days</p>;
+      case 'alerts':
+        return <p>Tab content for Alerts</p>;
+      default:
+        return null;
+    }
+  };
+
   return (
-    <Tabs
-      defaultActiveKey="profile"
-      id="fill-tab-example"
-      className="mb-3"
-      fill
-     >
-      <Tab eventKey="today" title="Today">
-        Tab content for Home
-      </Tab>
-      <Tab eventKey="hourly" title="Hourly">
-        Tab content for Profile
-      </Tab>
-      <Tab eventKey="fifteenDays" title="15 Days">
-        Tab content for Loooonger Tab
-      </Tab>
-      <Tab eventKey="alerts" title="Alerts" >
-        Tab content for Contact
-      </Tab>
-    </Tabs>
+    <div>
+      <ul className="nav nav-tabs mb-3">
+        <li className="nav-item">
+          <button className={`nav-link ${activeTab === 'today' ? 'active' : ''}`} onClick={() => setActiveTab('today')}>
+            Today
+          </button>
+        </li>
+        <li className="nav-item">
+          <button className={`nav-link ${activeTab === 'hourly' ? 'active' : ''}`} onClick={() => setActiveTab('hourly')}>
+            Hourly
+          </button>
+        </li>
+        <li className="nav-item">
+          <button className={`nav-link ${activeTab === 'fifteenDays' ? 'active' : ''}`} onClick={() => setActiveTab('fifteenDays')}>
+            15 Days
+          </button>
+        </li>
+        <li className="nav-item">
+          <button className={`nav-link ${activeTab === 'alerts' ? 'active' : ''}`} onClick={() => setActiveTab('alerts')}>
+            Alerts
+          </button>
+        </li>
+      </ul>
+      {renderContent()}
+    </div>
   );
-}
+};
 
 export default Headertwo;
