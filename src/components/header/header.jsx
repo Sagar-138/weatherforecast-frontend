@@ -11,7 +11,7 @@ function Header({ handleSearch }) {
 
   return (
     <div className="custom-navbar">
-      <a href="#" className="brand">Weather</a>
+      <a  className="brand">Weather</a>
       <ul className="nav">
         <li><a href="#action1">Home</a></li>
         <li><a href="#action2">Link</a></li>
