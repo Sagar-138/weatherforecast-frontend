@@ -1,0 +1,41 @@
+/* .current-hourly-weather-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .current-hourly-weather-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .current-hourly-weather-item h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .current-hourly-weather-item p {
+    margin: 5px 0;
+  }
+  
+  .current-hourly-weather-item img {
+    width: 40px;
+    height: 40px;
+  }
+   */
+
+   .current-hourly-weather-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .current-hourly-weather-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    /* Optional: You can add additional styling for each grid item */
+  }
+  

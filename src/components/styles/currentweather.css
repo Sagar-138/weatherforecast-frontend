@@ -1,4 +1,11 @@
+/* .weather-container {
+  display: grid;
+  display: flex;
+  justify-content: space-between;
+} */
+
 .weather-card {
+  /* flex: 1; */
   background-color: #fdfdfd;
   color: rgb(0, 0, 0);
   border-radius: 10px;
@@ -8,6 +15,15 @@
   font-family: Arial, sans-serif;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.3);
   margin-left: 25px;
+  /* margin-right: 20px; */
+}
+/* 
+.current-hourly-weather-container {
+  flex: 1;
+} */
+
+h2{
+  margin: 30px;
 }
 
 .weather-main {

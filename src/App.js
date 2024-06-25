@@ -9,7 +9,7 @@ function App() {
 
   const handleSearch = async (city) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/weather/city/${city}`);
+      const response = await axios.get(`https://weather-forecast-ftb2.onrender.com/api/weather/city/${city}`);
       setWeatherData(response.data);
       console.log(response);
     } catch (error) {

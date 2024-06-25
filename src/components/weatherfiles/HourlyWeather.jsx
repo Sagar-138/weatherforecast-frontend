@@ -22,14 +22,17 @@ const HourlyWeather = ({ data }) => {
   };
 
   return (
-    <div className="hourly-weather-container">
+   <div className='main'>
+     <h2 className="address-heading">{data.resolvedAddress}</h2>
+   <div className="hourly-weather-container">
+     
       {data.days[0].hours.map((hour, index) => {
         const tempCelsius = convertFtoC(hour.temp).toFixed(1);
         const feelsLikeCelsius = convertFtoC(hour.feelslike).toFixed(1);
 
         return (
           <div key={index} className="hourly-weather-card">
-            <h2>{formatTime(hour.datetime)}</h2>
+            <h3>{formatTime(hour.datetime)}</h3>
             <p>Temperature: {hour.temp}°F / {tempCelsius}°C</p>
             <p>Feels like: {hour.feelslike}°F / {feelsLikeCelsius}°C</p>
             <p>Humidity: {hour.humidity}%</p>
@@ -44,6 +47,7 @@ const HourlyWeather = ({ data }) => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 };

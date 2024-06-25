@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import CurrentWeather from '../weatherfiles/CurrentWeather';
 import HourlyWeather from '../weatherfiles/HourlyWeather';
 import Forecast from '../weatherfiles/Forecast';
+import WeatherAlerts from '../weatherfiles/Alerts';
 
 const Headertwo = ({ weatherData }) => {
   const [activeTab, setActiveTab] = useState('today');
@@ -16,7 +17,7 @@ const Headertwo = ({ weatherData }) => {
       case 'fifteenDays':
         return <Forecast data={weatherData}/>;
       case 'alerts':
-        return <p>Tab content for Alerts</p>;
+        return <WeatherAlerts Data={weatherData}/>;
       default:
         return null;
     }

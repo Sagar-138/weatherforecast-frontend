@@ -1,7 +1,9 @@
 import React from 'react';
 import '../styles/currentweather.css'; // Make sure to create this CSS file
 
-const CurrentWeather = ({ data }) => {
+// import CurrentHourly from './currenthourly';
+
+const CurrentWeather = ({ data  }) => {
 
   // useEffect(() => {
   //   console.log(data.currentConditions.conditions); // Check the data structure in the console
@@ -22,6 +24,8 @@ const CurrentWeather = ({ data }) => {
       humidity,
       visibility,
       dew
+     
+
     } = data.currentConditions;
 
     const convertFtoC= (fahrenheit)=>{
@@ -32,6 +36,8 @@ const CurrentWeather = ({ data }) => {
     const dewCelsius= convertFtoC(dew).toFixed(1);
   
     return (
+      <div className="weather-container">
+        <h2>{data.resolvedAddress}</h2>
       <div className="weather-card">
         <div className="weather-main">
           <div className="weather-icon">
@@ -71,7 +77,8 @@ const CurrentWeather = ({ data }) => {
           <p className="description">"{data.description}"</p>
         </div>
       </div>
-    );
-  };
-  
+      {/* <CurrentHourly data={data} /> */}
+    </div>
+  );
+};
   export default CurrentWeather;
